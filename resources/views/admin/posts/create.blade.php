@@ -12,7 +12,7 @@
             </div>
         @endif
 
-<form action="{{route('admin.posts.store')}}" method="post">
+<form action="{{route('admin.posts.store')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
       <label for="titolo" class="form-label">titolo</label>
@@ -31,6 +31,17 @@
 
         </select>
     </div>
+    <div class="mb-3">
+            <label for="img" class="form-label">Immagine</label>
+            <input id="img" type="file" name="image" class="form-control-file 
+            @error('image') 
+            is-invalid 
+            @enderror">
+            @error('image')
+                 <div class="alert alert-danger">{{ $message }}</div>
+            @enderror 
+
+        </div>
     <div class="mb-3">
         <label for="">Scegli tags</label>
         <div class="mb-3 d-flex">

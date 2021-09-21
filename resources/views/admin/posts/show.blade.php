@@ -4,6 +4,7 @@
 <div class="container">
         <h2>Dettagli prodotto</h2>
         <div class="card">
+        <img src="{{asset('storage/' .$post->cover) }}" class="card-img-top" style="width:300px; height:300px" alt="...">
             <div class="card-header bg-danger text-white fw-bold">
                 {{ $post->title }}
             </div>
